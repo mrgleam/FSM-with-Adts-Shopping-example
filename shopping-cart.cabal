@@ -1,0 +1,68 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 0492446c263b3f6240582854b4445a32c7befdb16d162978cf7109274821cada
+
+name:           shopping-cart
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/shopping-cart#readme>
+homepage:       https://github.com/githubuser/shopping-cart#readme
+bug-reports:    https://github.com/githubuser/shopping-cart/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2020 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/shopping-cart
+
+library
+  exposed-modules:
+      Checkout
+      Lib
+      PaymentProvider
+      StateMachinesWithAdts
+  other-modules:
+      Paths_shopping_cart
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , text
+  default-language: Haskell2010
+
+executable shopping-cart-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_shopping_cart
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , shopping-cart
+    , text
+  default-language: Haskell2010
+
+test-suite shopping-cart-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_shopping_cart
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , shopping-cart
+    , text
+  default-language: Haskell2010
